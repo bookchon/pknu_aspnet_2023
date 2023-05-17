@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>네비게이션 메뉴</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script> -->
+</head>
+<body>
+    <div>
+        <ol>
+            과일
+            <li>망고</li> <!-- li는 번호지정, ul은 동그라미 지정 -->
+            <li>파파야</li>
+            <li>망고스틴</li>
+            <li>바나나
+                <ol>목록
+                    <li>원숭이 바나나</li>
+                    <li>사료용 바나나</li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+
+    <div>
+        <table border ="1"> <!-- border는 표를 만듦 -->
+            <tr> <!-- tr = 하나의 행 -->
+                <td></td> <!-- td = 하나의 셀-->
+                <th>월</th> <!-- th = 진하게 나옴 -->
+                <th>화</th>
+                <td>수</td>
+                <td>목</td>
+                <td>금</td>
+            </tr>
+            <tr>
+                <td>1교시</td>
+                <td>영어</td>
+                <td>국어</td>
+                <td>과학</td>
+                <td>사회</td>
+                <td colspan="2">미술</td> <!-- 옆 셀과 합치기-->
+            </tr>
+            <tr>
+                <td>2교시</td> <!-- 줄이 밑으로 계속 내려감 -->
+                <td>도덕</td>
+                <td>체육</td>
+                <td>영어</td>
+                <td>수학</td>
+                <td>기술</td>
+            </tr>
+            <tr>
+                <td>3교시</td>
+                <td>국사</td>
+                <td>독어</td>
+                <td>일본어</td>
+                <td>음악</td>
+                <td>중국어</td>
+            </tr>
+        </table>
+    </div>
+
+    <div>
+        <audio src="./test.mp4" controls="controls"></audio>
+        <vedio src="./test.mp4" controls="controls"></video>
+    </div>
+</body>
+</html>
