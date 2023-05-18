@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>jQuery</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script
+        src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+        crossorigin="anonymous">
+    </script>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script> -->
+    <script>
+        $(document).ready(function(){
+            // 앞쪽 function은 이벤트에 대한 처리함수
+            // , 뒤쪽 function은 이벤트 반대에 대한 처리함수
+            $('h1').hover(function() {
+                $(this).css({
+                    backgroundColor: 'red',
+                    color: 'white'
+                })
+            }, function() {
+                $(this).css({
+                    backgroundColor:'',
+                    color:''
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>Click</h1>>
+</body>
+</html>

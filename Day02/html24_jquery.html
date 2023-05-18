@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>jQuery</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script
+        src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+        crossorigin="anonymous">
+    </script>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script> -->
+    <script>
+        $(document).ready(function(){
+            var number1 = $('#number1');
+            var number2 = $('#number2');
+
+            number1.focus(); // 주민번호 1에 포커스를 줌
+
+            number1.keydown(function () {
+                if (number1.val().length >= 6)
+                {
+                    number2.focus(); // 주민번호 앞자리가 6자리를 넘으면 주민 2로 넘어감
+                }
+            });
+            
+            number2.keydown(function (event) {
+                var event = event || window.event;
+                if (event.keyCode == 8 && number2.val().length == 0){
+                    number1.focus();
+                }
+            })
+        });
+    </script>
+</head>
+<body>
+    <form>
+        <input type="text" name="number" maxlength="6">
+        <span>-</span>
+        <input type="text" name="number" maxlength="7"><br>
+        <input type="submit">
+    </form>
+</body>
+</html>

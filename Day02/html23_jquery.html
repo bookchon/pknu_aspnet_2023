@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>jQuery</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script
+        src="https://code.jquery.com/jquery-3.7.0.min.js"
+        integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g="
+        crossorigin="anonymous">
+    </script>
+    <!-- <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script> -->
+    <script>
+        $(document).ready(function(){
+            $('input').click(function(){
+                $('.page').fadeToggle('slow');
+            });
+
+            $('.box').css({
+                width: '100px',
+                height: '100px',
+                backgroundColor: 'red'
+            }).
+               animate({
+                width: '500',
+                opacity: 0.5
+            }, 500);
+        });
+    </script>
+</head>
+<body>
+    <input type="button" value="toggle">
+    <div class="page">
+        <h1>Lorem ipsum dolor sit amet.</h1>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consectetur aliquam dicta non deserunt asperiores pariatur sunt consequatur odit impedit, ab sapiente dignissimos laborum exercitationem ducimus cumque quaerat rem placeat sequi provident cupiditate, minus suscipit. Ea magni cum culpa sit tempora quasi et reiciendis sequi aut impedit doloremque cumque dignissimos ipsa maxime, quo excepturi consequatur, sapiente, voluptas molestias quidem provident illum laboriosam nesciunt aspernatur! Delectus molestiae eligendi quae, vel, voluptates reprehenderit similique consequuntur illum incidunt harum quisquam, sequi dolorem doloribus repellat non? Aliquam veritatis repellat magni aperiam unde tempore, nihil temporibus impedit, voluptatem expedita incidunt quo cupiditate? Distinctio blanditiis iure excepturi?</p>
+    </div>
+    <div class="box"></div>
+</body>
+</html>
