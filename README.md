@@ -21,4 +21,4 @@ ASP.NET 학습 리포지토리
 		- 핀터레스트 웹 클로닝
 		
 
-<img src=https://github.com/bookchon/pknu_aspnet_2023/blob/main/images/pinterestpage.gif?raw=true width="700">
+<img src="https://github.com/bookchon/pknu_aspnet_2023/blob/main/images/pinterestpage.gif?raw=true" width="700">
