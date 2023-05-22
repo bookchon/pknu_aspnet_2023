@@ -28,3 +28,6 @@ ASP.NET 학습 리포지토리
 		- ASP.NET 기본
 		- ASP>NET 프로젝트
 		thisisunsafe
+		
+	ASP.NET Core MVC 게시판
+<img src="https://github.com/bookchon/pknu_aspnet_2023/blob/main/images/aspnet03.jpg?raw=true" width="700">	
