@@ -37,3 +37,34 @@ ASP.NET 학습 리포지토리
 		- 게시판 계속
 
 <img src="https://github.com/bookchon/pknu_aspnet_2023/blob/main/images/aspnet04.gif?raw=true" width="700">	
+
+## 6일차
+	-
+
+## 7일차
+	- ASP.NET Core MVC
+		- 게시판 정리 (아이디 삭제, 번호 표시)
+		- 권한관리
+		- 부트스트랩 테마 적용 웹 사이트 제작
+	
+	- ASP.NET RestAPI
+	- 개인포트폴리오
+		- 부트스트랩 테마 재적용
+		
+## 8일차
+	- ASP.NET Core MVC
+		- 부트스트랩 테마(SEO Dream) 적용
+		
+## 9일차
+	- ASP.NET Core MVC
+		- SEO Dream 테마 완료
+	- ASP.NET RestAPI
+		- RestAPI Server
+		- WPF Client
+		
+## 10일차
+	- ASP.NET RestAPI
+		- RestAPI Server
+		- WPF Client
+	- 개인 포트폴리오 웹
+		- 부트스트랩 테마 재적용
