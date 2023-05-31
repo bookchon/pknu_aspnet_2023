@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<!-- HTML은 대소문자구분이 없지만 대문자사용은 자제할 것! -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>BOOKCHON - Start Website</title>
+    <link rel="icon" type="image/x-icon" href="~/themes/grayscale_pages/src/assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="~/themes/grayscale_pages/dist/css/styles.css" rel="stylesheet" />
+    <!-- Bootstrap 5 CDN -->
+    <link rel="stylesheet" href="~/themes/grascale_pages/vendor/bootstrap/css/bootstrap.min.css" />
+    <!-- 기존 추가 CSS -->
+    <!-- WYSWYG 에디터 링크 -->
+    <link rel="stylesheet" href="~/lib/trumbowyg/ui/trumbowyg.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <!-- Toast 메시지창 js 라이브러리용 CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+</head>
+<body>
+    <!-- ***** Preloader Start ***** -->
+    <div id="js-preloader" class="js-preloader">
+        <div class="preloader-inner">
+            <span class="dot"></span>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- ***** Header Area Start ***** -->
+    <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="main-nav">
+                        <!-- ***** Menu Start ***** -->
+                        <!-- Navigation-->
+                        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+                            <div class="container px-4 px-lg-5">
+                                <a class="navbar-brand" href="#page-top">Bookchon Website</a>
+                                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                                    Menu
+                                    <i class="fas fa-bars"></i>
+                                </button>
+                                <div class="collapse navbar-collapse" id="navbarResponsive">
+                                    <ul class="navbar-nav ms-auto">
+                                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#projects">Portpolio</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#signup">Signup</a></li>
+                                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                                        @if (signInManager.IsSignedIn(User))
+                                        {
+                                            @if (User.IsInRole("Admin"))
+                                            {
+                                                <li class="nav-item">
+                                                    <a asp-controller="Admin" asp-action="ListRoles" class="nav-link">권한관리</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a asp-controller="Portfolio" asp-action="Index" class="nav-link">포폴관리</a>
+                                                </li>
+                                            }
+                                            <li class="nav-item">
+                                                <a asp-controller="Account" asp-action="Profile"
+                                               asp-route-userName="@userManager.GetUserName(User)" class="nav-link">Profile</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <form asp-controller="Account" asp-action="Logout" class="nav-link">
+                                                    @userManager.GetUserName(User)
+                                                </form>
+                                            </li>
+                                        }
+                                        else
+                                        {
+                                            <li class="nav-item">
+                                                <a asp-controller="Account" asp-action="Register" class="nav-link">Register</a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a asp-controller="Account" asp-action="Login" class="nav-link">Login</a>
+                                            </li>
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                        @*<ul class="nav">
+                        <li class="scroll-to-section"><a asp-controller="Home" asp-action="Index" class="active nanum-bold">홈</a></li>
+                        @if (ViewData["NoScroll"] != "true")
+                        {
+                        <li class="scroll-to-section"><a href="#features" class="nanum-bold">스킬</a></li>
+                        <li class="scroll-to-section"><a href="#about" class="nanum-bold">소개</a></li>
+                        <li class="scroll-to-section"><a href="#portfolio" class="nanum-bold">포트폴리오</a></li>
+                        <li class="scroll-to-section"><a href="#contact" class="nanum-bold">문의하기</a></li>
+                        }
+                        <li class="scroll-to-section"><a asp-action="Index" asp-controller="Board" class="nanum-bold">공지사항</a></li>
+                        *<li class="scroll-to-section"><div class="main-blue-button"><a href="#contact">Get Your Quote</a></div></li>*
+                        @if (signInManager.IsSignedIn(User))
+                        {
+                        @if (User.IsInRole("Admin"))
+                        {
+                        <li class="scroll-to-section">
+                        <a asp-controller="Admin" asp-action="ListRoles">권한관리</a>
+                        </li>
+                        <li class="scroll-to-section">
+                        <a asp-controller="Portfolio" asp-action="Index">포폴관리</a>
+                        </li>
+                        }
+                        <li class="scroll-to-section">
+                        <a asp-controller="Account" asp-action="Profile"
+                        asp-route-userName="@userManager.GetUserName(User)">프로필</a>
+                        </li>
+                        <li class="scroll-to-section">
+                        <form asp-controller="Account" asp-action="Logout" method="post">
+                        <button type="submit" class="btn btn-link nanum-bold">@userManager.GetUserName(User)</button>
+                        </form>
+                        </li>
+                        }
+                        else
+                        {
+                        <li class="scroll-to-section">
+                        <a asp-controller="Account" asp-action="Register">회원가입</a>
+                        </li>
+                        <li class="scroll-to-section">
+                        <a asp-controller="Account" asp-action="Login">로그인</a>
+                        </li>
+                        }
+                        </ul>
+                        <a class='menu-trigger'>
+                        <span>Menu</span>
+                        </a>*@
+
+                        <!-- ***** Menu End ***** -->
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- ***** Header Area End ***** -->
+    <div>
+        <!-- 필수! -->
+        @RenderBody()
+    </div>
+
+    <footer class="footer bg-black small text-center text-white-50">
+        <div class="container px-4 px-lg-5">Copyright &copy; Bookchon Website 2023</div>
+    </footer>
+    <!-- Scripts -->
+    <script src="~/themes/grascale_pages/vendor/jquery/jquery.js"></script>
+    <script src="~/themes/grascale_pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="~/themes/grayscale_pages/dist/js/scripts.js"></script>
+    <script src="~/themes/grayscale_pages/scripts/build-assets.js"></script>
+    <script src="~/themes/grayscale_pages/scripts/build-pug.js"></script>
+    <script src="~/themes/grayscale_pages/scripts/build-scripts.js"></script>
+    <script src="~/themes/grayscale_pages/scripts/build-scss.js"></script>
+    <script src="~/themes/grayscale_pages/scripts/clean.js"></script>
+    <script src="~/themes/grayscale_pages/scripts/render-assets.js"></script>
+    <script src="~/themes/grayscale_pages/scripts/render-pug.js"></script>
+    <script src="~/themes/grayscale_pages/scripts/render-scss.js"></script>
+    <script src="~/themes/grayscale_pages/scripts/sb-watch.js"></script>
+    <script src="~/themes/grayscale_pages/scripts/start.js"></script>
+    <script src="~/themes/grayscale_pages/scripts/start-debug.js"></script>
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <!-- * *                               SB Forms JS                               * *-->
+    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+    <!-- trumbowyg를 site.js에서 부르기때문에 상위에 trumbowyg에 관련된 js가 먼저 나와야.. -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
