@@ -1,7 +1,13 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TodoApiServer.Models
+namespace TodoItemApp.Models
 {
     public class TodoItem
     {
@@ -16,3 +22,4 @@ namespace TodoApiServer.Models
         public int IsComplete { get; set; }
     }
 }
+
